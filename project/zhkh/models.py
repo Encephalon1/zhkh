@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 
 class Announcement(models.Model):
+    an_time = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100)
     text = models.TextField()
 
