@@ -1,6 +1,6 @@
 import './App.css';
 import { Navigate, Route, Routes } from "react-router-dom";
-import { Header } from "./components/header/Header"
+import Header from "./components/header/Header"
 
 function App() {
   return (
