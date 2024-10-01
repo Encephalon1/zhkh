@@ -4,6 +4,7 @@ import {useState, useEffect} from "react";
 import { Navigate, Route, Routes, BrowserRouter } from "react-router-dom";
 import Header from "./components/header/Header"
 import {Main} from "./components/main/Main"
+import AnnouncementCreateUpdate from './components/AnnouncementCreateUpdate';
 
 function App() {
   const [announcements, setAnnouncements] = useState([])
@@ -41,10 +42,13 @@ useEffect(
 
       <BrowserRouter>
       <Routes>
+        <Route path='/announcement/' element={<AnnouncementCreateUpdate/>} />
+        <Route path='/announcement/:pk' element={<AnnouncementCreateUpdate/>} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       </BrowserRouter>
-
+    
+      
     </div>
   );
 }
