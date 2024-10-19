@@ -1,9 +1,10 @@
 import './App.css';
 import React from "react";
 import {useState, useEffect} from "react";
-import { Navigate, Route, Routes, BrowserRouter } from "react-router-dom";
+import { Navigate, Route, Routes, BrowserRouter, Router } from "react-router-dom";
 import Header from "./components/header/Header"
 import {Main} from "./components/main/Main"
+import Login from './components/auth/Login';
 import AnnouncementCreateUpdate from './components/AnnouncementCreateUpdate';
 
 function App() {
@@ -17,7 +18,6 @@ useEffect(
       });
   },
 []);
-
 
   return (
     <div className="App">
@@ -42,6 +42,7 @@ useEffect(
 
       <BrowserRouter>
       <Routes>
+        <Route path='/login' element={<Login />} />
         <Route path='/announcement/' element={<AnnouncementCreateUpdate/>} />
         <Route path='/announcement/:pk' element={<AnnouncementCreateUpdate/>} />
         <Route path="*" element={<Navigate to="/" />} />
